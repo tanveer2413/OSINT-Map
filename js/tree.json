@@ -1,1541 +1,1046 @@
 {
-    "name": "OSINT Map",
-    "children": [
-        {
-            "name": "Companies \ud83c\udfec",
-            "children": [
-                {
-                    "name": "\ud83d\udcd2 Dorking Tip",
-                    "url": "https://twitter.com/OSINTcda/status/1493808415277150208",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d OpenCorporates",
-                    "url": "https://opencorporates.com",
-                    "type": "url"
-                },
-                {
-                    "name": "Shell Companies",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Offshore Leaks Database",
-                            "url": "https://offshoreleaks.icij.org",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
+  "1.0 Security Concepts": {
+    "1.1 Types of security controls": {
+      "Categories": [
+        "Technical",
+        "Managerial",
+        "Operational",
+        "Physical"
+      ],
+      "Control types": [
+        "Preventive",
+        "Deterrent",
+        "Detective",
+        "Corrective",
+        "Compensating",
+        "Directive"
+      ]
+    },
+    "1.2 Fundamental security concepts": {
+      "Confidentiality, Integrity, and Availability (CIA)": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "Non-repudiation": [],
+      "Authentication, Authorization, and Accounting (AAA)": {
+        "Authenticating people": [],
+        "Authenticating systems": [],
+        "Authorization models": []
+      },
+      "Gap analysis": [],
+      "Zero Trust": {
+        "Control Plane": [
+          "Adaptive identity",
+          "Threat scope reduction",
+          "Policy-driven access control",
+          "Policy Administrator",
+          "Policy Engine"
+        ],
+        "Data Plane": [
+          "Implicit trust zones",
+          "Subject/System",
+          "Policy Enforcement Point"
+        ]
+      },
+      "Physical security": {
+        "Bollards": [],
+        "Access control vestibule": [],
+        "Fencing": [],
+        "Video surveillance": [],
+        "Security guard": [],
+        "Access badge": [],
+        "Lighting": [],
+        "Sensors": [
+          "Infrared",
+          "Pressure",
+          "Microwave",
+          "Ultrasonic"
+        ]
+      },
+      "Deception and disruption technology": [
+        "Honeypot",
+        "Honeynet",
+        "Honeyfile",
+        "Honeytoken"
+      ]
+    },
+    "1.3 Importance of change management processes and the impact to security": {
+      "Business processes impacting security operation": [
+        "Approval process",
+        "Ownership",
+        "Stakeholders",
+        "Impact analysis",
+        "Test results",
+        "Backout plan",
+        "Maintenance window",
+        "Standard operating procedure"
+      ],
+      "Technical implications": [
+        "Allow lists/deny lists",
+        "Restricted activities",
+        "Downtime",
+        "Service restart",
+        "Application restart",
+        "Legacy applications",
+        "Dependencies"
+      ],
+      "Documentation": [
+        "Updating diagrams",
+        "Updating policies/procedures"
+      ],
+      "Version control": []
+    },
+    "1.4 Cryptographic solutions": {
+      "Public key infrastructure (PKI)": [
+        "Public key",
+        "Private key",
+        "Key escrow"
+      ],
+      "Encryption": {
+        "Level": [
+          "Full-disk",
+          "Partition",
+          "File",
+          "Volume",
+          "Database",
+          "Record"
+        ],
+        "Transport/communication": [],
+        "Asymmetric": [],
+        "Symmetric": [],
+        "Key exchange": [],
+        "Algorithms": [],
+        "Key length": []
+      },
+      "Tools": [
+        "Trusted Platform Module (TPM)",
+        "Hardware security module (HSM)",
+        "Key management system",
+        "Secure enclave"
+      ],
+      "Obfuscation": [
+        "Steganography",
+        "Tokenization",
+        "Data masking"
+      ],
+      "Hashing": [],
+      "Salting": [],
+      "Digital signatures": [],
+      "Key stretching": [],
+      "Blockchain": [],
+      "Open public ledger": [],
+      "Certificates": [
+        "Certificate authorities",
+        "Certificate revocation lists (CRLs)",
+        "Online Certificate Status Protocol (OCSP)",
+        "Self-signed",
+        "Third-party",
+        "Root of trust",
+        "Certificate signing request (CSR) generation",
+        "Wildcard"
+      ]
+    }
+  },
+  "2.0 Threats, Vulnerabilities and Mitigations": {
+    "2.1 Threat actors and Motivations": {
+      "Threat actors": [
+        "Nation-state",
+        "Unskilled attacker",
+        "Hacktivist",
+        "Insider threat",
+        "Organized crime",
+        "Shadow IT"
+      ],
+      "Attributes of actors": [
+        "Internal/external",
+        "Resources/funding",
+        "Level of sophistication/capability"
+      ],
+      "Motivations": [
+        "Data exfiltration",
+        "Espionage",
+        "Service disruption",
+        "Blackmail",
+        "Financial gain",
+        "Philosophical/political beliefs",
+        "Ethical",
+        "Revenge",
+        "Disruption/chaos",
+        "War"
+      ]
+    },
+    "2.2 Threat vectors and attack surfaces": {
+      "Message-based": [
+        "Email",
+        "Short Message Service (SMS)",
+        "Instant messaging (IM)"
+      ],
+      "Image-based": [],
+      "File-based": [],
+      "Voice call": [],
+      "Removable device": [],
+      "Vulnerable software": [
+        "Client-based vs. agentless"
+      ],
+      "Unsupported systems and applications": [],
+      "Unsecure networks": [
+        "Wireless",
+        "Wired",
+        "Bluetooth"
+      ],
+      "Open service ports": [],
+      "Default credentials": [],
+      "Supply chain": [
+        "Managed service providers (MSPs)",
+        "Vendors",
+        "Suppliers"
+      ],
+      "Human vectors/social engineering": [
+        "Phishing",
+        "Vishing",
+        "Smishing",
+        "Misinformation/disinformation",
+        "Impersonation",
+        "Business email compromise",
+        "Pretexting",
+        "Watering hole",
+        "Brand impersonation",
+        "Typosquatting"
+      ]
+    },
+    "2.3 Types of vulnerabilities": {
+      "Application": [
+        "Memory injection",
+        "Buffer overflow",
+        "Race conditions",
+        "Malicious update"
+      ],
+      "Race conditions": [
+        "Time-of-check (TOC)",
+        "Time-of-use (TOU)"
+      ],
+      "Operating system (OS)-based": [],
+      "Web-based": [
+        "Structured Query Language injection (SQLi)",
+        "Cross-site scripting (XSS)"
+      ],
+      "Hardware": [
+        "Firmware",
+        "End-of-life",
+        "Legacy"
+      ],
+      "Virtualization": [
+        "Virtual machine (VM) escape",
+        "Resource reuse"
+      ],
+      "Cloud-specific": [],
+      "Supply chain": [
+        "Service provider",
+        "Hardware provider",
+        "Software provider"
+      ],
+      "Cryptographic": [],
+      "Misconfiguration": [],
+      "Mobile device": [
+        "Side loading",
+        "Jailbreaking"
+      ],
+      "Zero-day": []
+    },
+    "2.4 Indicators of malicious activity": {
+      "Malware attacks": [
+        "Ransomware",
+        "Trojan",
+        "Worm",
+        "Spyware",
+        "Bloatware",
+        "Virus",
+        "Keylogger",
+        "Logic bomb",
+        "Rootkit"
+      ],
+      "Physical attacks": [
+        "Brute force",
+        "Radio frequency identification (RFID) cloning",
+        "Environmental"
+      ],
+      "Network attacks": [
+        "Distributed denial-of-service (DDoS)",
+        "Domain Name System (DNS) attacks",
+        "Wireless",
+        "On-path",
+        "Credential replay",
+        "Malicious code"
+      ],
+      "Distributed denial-of-service (DDoS)": [
+        "Amplified",
+        "Reflected"
+      ],
+      "Application attacks": [
+        "Injection",
+        "Buffer overflow",
+        "Replay",
+        "Privilege escalation",
+        "Forgery",
+        "Directory traversal"
+      ],
+      "Cryptographic attacks": [
+        "Downgrade",
+        "Collision",
+        "Birthday"
+      ],
+      "Password attacks": [
+        "Spraying",
+        "Brute force"
+      ],
+      "Indicators": [
+        "Account lockout",
+        "Concurrent session usage",
+        "Blocked content",
+        "Impossible travel",
+        "Resource consumption",
+        "Resource inaccessibility",
+        "Out-of-cycle logging",
+        "Published/documented",
+        "Missing logs"
+      ]
+    },
+    "2.5 Mitigation techniques": {
+      "Malware attacks": [
+        "Ransomware",
+        "Trojan",
+        "Worm",
+        "Spyware",
+        "Bloatware",
+        "Virus",
+        "Keylogger",
+        "Logic bomb",
+        "Rootkit"
+      ],
+      "Physical attacks": [
+        "Brute force",
+        "Radio frequency identification (RFID) cloning",
+        "Environmental"
+      ],
+      "Network attacks": [
+        "Distributed denial-of-service (DDoS)",
+        "Domain Name System (DNS) attacks",
+        "Wireless",
+        "On-path",
+        "Credential replay",
+        "Malicious code"
+      ],
+      "Distributed denial-of-service (DDoS)": [
+        "Amplified",
+        "Reflected"
+      ],
+      "Application attacks": [
+        "Injection",
+        "Buffer overflow",
+        "Replay",
+        "Privilege escalation",
+        "Forgery",
+        "Directory traversal"
+      ],
+      "Cryptographic attacks": [
+        "Downgrade",
+        "Collision",
+        "Birthday"
+      ],
+      "Password attacks": [
+        "Spraying",
+        "Brute force"
+      ],
+      "Indicators": [
+        "Account lockout",
+        "Concurrent session usage",
+        "Blocked content",
+        "Impossible travel",
+        "Resource consumption",
+        "Resource inaccessibility",
+        "Out-of-cycle logging",
+        "Published/documented",
+        "Missing logs"
+      ],
+      "Segmentation": [],
+      "Access control": [
+        "Access control list (ACL)",
+        "Permissions"
+      ],
+      "Application allow list": [],
+      "Isolation": [],
+      "Patching": [],
+      "Encryption": [],
+      "Monitoring": [],
+      "Least privilege": [],
+      "Configuration enforcement": [],
+      "Decommissioning": [],
+      "Hardening techniques": [
+        "Encryption",
+        "Installation of endpoint protection",
+        "Host-based firewall",
+        "Host-based intrusion prevention system (HIPS)",
+        "Disabling ports/protocols",
+        "Default password changes",
+        "Removal of unnecessary software"
+      ]
+    }
+  },
+  "3.0 Security Architecture": {
+    "3.1 Different architecture models": {
+      "Architecture and infrastructure concepts": {
+        "Cloud": [
+          "Responsibility matrix",
+          "Hybrid considerations",
+          "Third-party vendors"
+        ],
+        "Infrastructure as code (IaC)": [],
+        "Serverless": [],
+        "Microservices": [],
+        "Network infrastructure": {
+          "Physical isolation": [
+            "Air-gapped"
+          ],
+          "Logical segmentation": [],
+          "Software-defined networking (SDN)": []
         },
-        {
-            "name": "Cryptocurrencies \ud83d\udcc8",
-            "children": [
-                {
-                    "name": "\ud83c\udf0d BlockExplorer",
-                    "url": "https://blockexplorer.com",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d WalletExplorer",
-                    "url": "https://www.walletexplorer.com",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Data Lookup \ud83d\udd0d",
-            "children": [
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 Epieos",
-                    "url": "https://tools.epieos.com/",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d Hudson Rock",
-                    "url": "https://www.hudsonrock.com/threat-intelligence-cybercrime-tools",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcb5\ud83c\udf0d Lampyre.io",
-                    "url": "https://lampyre.io",
-                    "type": "url"
-                },
-                {
-                    "name": "Leaked Database",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d\ud83e\ude99 DeHashed",
-                            "url": "https://www.dehashed.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d HaveIBeenPwned",
-                            "url": "https://haveibeenpwned.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "Showing content",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d\ud83e\ude99 IntelligenceX",
-                                    "url": "https://intelx.io",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83d\udcb5\ud83c\udf0d Leak-Lookup",
-                                    "url": "https://leak-lookup.com",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83c\udf0d OSINT Industries",
-                    "url": "https://osint.industries",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Domains \ud83d\udcf6",
-            "children": [
-                {
-                    "name": "\ud83d\udcd2 Attack Surface",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/Websites/Website%20OSINT%20Attack%20Surface.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 Censys",
-                    "url": "https://search.censys.io",
-                    "type": "url"
-                },
-                {
-                    "name": "Certificates",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d crt.sh",
-                            "url": "https://crt.sh",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "DNS",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d DNSHistory",
-                            "url": "http://dnshistory.org",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d SecurityTrails",
-                            "url": "https://securitytrails.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 GreyNoise",
-                    "url": "https://viz.greynoise.io",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d Hunter",
-                    "url": "https://hunter.io",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d ScamSearch",
-                    "url": "https://scamsearch.io",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 Shodan",
-                    "url": "https://www.shodan.io",
-                    "type": "url"
-                },
-                {
-                    "name": "Subdomains",
-                    "children": [
-                        {
-                            "name": "\ud83d\udce6 SubFinder",
-                            "url": "https://github.com/projectdiscovery/subfinder",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Email Addresses \ud83d\udcec",
-            "children": [
-                {
-                    "name": "\ud83d\udcd2 Attack Surface",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/Email/EMAIL%20OSINT%20Attack%20Surface.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 Censored Domain finder",
-                    "url": "https://github.com/novitae/Aet-s-Tools/tree/main/EmDoFi",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 Epieos",
-                    "url": "https://tools.epieos.com/",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 GHunt",
-                    "url": "https://github.com/mxrch/GHunt",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 holehe",
-                    "url": "https://github.com/megadose/holehe",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 MailCat",
-                    "url": "https://github.com/sharsil/mailcat",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d OSINT Industries",
-                    "url": "https://osint.industries",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d Verify-Email",
-                    "url": "https://verify-email.org",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Geolocation & Maps \ud83d\uddfa",
-            "children": [
-                {
-                    "name": "GEOINT Tips",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2\ud83c\udf0d GeoHints",
-                            "url": "https://www.geohints.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Geolocation with Mountains",
-                            "url": "https://www.youtube.com/watch?v=vNu2X7aCMkU",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Identifying voltage levels of eletric lines",
-                            "url": "https://twitter.com/engineers_feed/status/1522799064852537344",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Intersections on Google Maps",
-                            "url": "https://twitter.com/SEINT_pl/status/1493484660902576128",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 HuntIntel",
-                    "url": "https://www.huntintel.io",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d InstaHunt",
-                    "url": "https://instahunt.co",
-                    "type": "url"
-                },
-                {
-                    "name": "Maps",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Baidu Maps",
-                            "url": "https://map.baidu.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Bellingcat OSM Search",
-                            "url": "https://osm-search.bellingcat.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Bellingcat OSM Search (how to)",
-                            "url": "https://www.bellingcat.com/resources/how-tos/2023/05/08/finding-geolocation-leads-with-bellingcats-openstreetmap-search-tool/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d\ud83d\udce6 Google Earth",
-                            "url": "https://www.google.com/earth/versions/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Overpass Turbo",
-                            "url": "https://overpass-turbo.eu",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Rutmap",
-                            "url": "https://www.rutmap.com/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Sogou",
-                            "url": "https://pic.sogou.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Montains",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d PeakVisor",
-                            "url": "https://peakvisor.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Satellites",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d EarthOnDemand",
-                            "url": "https://earthondemand.astraea.earth",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Street View",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Infrared Street View",
-                            "url": "https://isv.intofuture.org/maps",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Images \ud83d\uddbc",
-            "children": [
-                {
-                    "name": "EXIF",
-                    "children": [
-                        {
-                            "name": "\ud83e\udde9 Exif Viewer Pro",
-                            "url": "https://chrome.google.com/webstore/detail/exif-viewer-pro/mmbhfeiddhndihdjeganjggkmjapkffm",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83d\udcd2 Image Attack Surface",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/Image%20Analysis/IMAGE%20OSINT%20Attack%20Surface.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "Logos",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Wipo",
-                            "url": "https://branddb.wipo.int/branddb/en/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Reverse Image Search",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Alamy",
-                            "url": "https://www.alamy.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/Image%20Analysis/IMAGE%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Baidu (\u767e\u5ea6) Images",
-                            "url": "https://www.baidu.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Bing Images",
-                            "url": "https://www.bing.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "Face Search",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d FaceCheck",
-                                    "url": "https://facecheck.id",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83d\udcb5\ud83c\udf0d PimEyes",
-                                    "url": "https://pimeyes.com/en",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "\ud83e\udde9 Fake New Debunker",
-                            "url": "https://chrome.google.com/webstore/detail/fake-news-debunker-by-inv/mhccpoafgdgbhnjfhkcmgknndkeenfhe",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Google Images",
-                            "url": "https://images.google.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Google Lens",
-                            "url": "https://lens.google",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Image Identity",
-                            "url": "https://www.imageidentify.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Image Raider",
-                            "url": "https://infringement.report/api/raider-reverse-image-search/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Karma Decay (Reddit)",
-                            "url": "http://karmadecay.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83e\udde9 RevEye",
-                            "url": "https://chrome.google.com/webstore/detail/reveye-reverse-image-sear/keaaclcjhehbbapnphnmpiklalfhelgf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d SauceNAO",
-                            "url": "https://saucenao.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83e\udde9 Search By Image",
-                            "url": "https://addons.mozilla.org/fr/firefox/addon/search_by_image/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "Search by terms",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d Imgur Search",
-                                    "url": "https://imgur.com/search",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "\ud83c\udf0d ShutterStock",
-                            "url": "https://www.shutterstock.com/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Tineye",
-                            "url": "https://tineye.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Yandex Images",
-                            "url": "https://yandex.com/images/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Tools",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d ImgOps",
-                            "url": "http://imgops.com/upload",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Photoshop Online",
-                            "url": "https://www.photopea.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "IP Addresses \ud83d\udd22",
-            "children": [
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 AbuseIPDB",
-                    "url": "https://www.abuseipdb.com",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 Censys",
-                    "url": "https://search.censys.io",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 GreyNoise",
-                    "url": "https://viz.greynoise.io",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d I Know What You Download",
-                    "url": "https://iknowwhatyoudownload.com/",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d InfoByIP",
-                    "url": "https://www.infobyip.com/",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d InfoSniper",
-                    "url": "https://www.infosniper.net",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcd2 IP Address Attack Surface",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/IP/IP%20Address%20OSINT%20Attack%20Surface.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d IP Investigation toolbox",
-                    "url": "https://cipher387.github.io/domain_investigation_toolbox/ip.html",
-                    "type": "url"
-                },
-                {
-                    "name": "IP Loggers",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d\u2757\ufe0f Grabify",
-                            "url": "https://grabify.link",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d\u2757\ufe0f IPLogger",
-                            "url": "https://iplogger.org",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83d\udcd2 IP Subnet by regions",
-                    "url": "https://github.com/ipverse/rir-ip",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83e\ude99 Shodan",
-                    "url": "https://www.shodan.io",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Military \ud83e\ude96",
-            "children": [
-                {
-                    "name": "Air",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Google Military Airbase",
-                            "url": "https://twitter.com/terryzim/status/1315957946594066433",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83d\udcd2 Ammunitions Wiki",
-                    "url": "http://www.cartrology.com",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcd2 Camopedia",
-                    "url": "https://www.camopedia.org/index.php/Main_Page",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcd2 Historical Tanks Wiki (WoT)",
-                    "url": "https://worldoftanks.com/en/tankopedia/",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcd2 Military and Conflict GIJN Database",
-                    "url": "https://docs.google.com/spreadsheets/d/1wiIVKdvn8QSBQ1LGB9kiGrB28SYFblbZ7uM4uKSWFfU/edit#gid=0",
-                    "type": "url"
-                },
-                {
-                    "name": "Ships",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Military Ships Tracker",
-                            "url": "https://www.marinevesseltraffic.com/2013/02/military-ship-track.html",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Names \ud83d\udcc7",
-            "children": [
-                {
-                    "name": "\ud83c\udf0d NAMINT",
-                    "url": "https://seintpl.github.io/NAMINT/",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcd2 Person Attack Surface",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/Person/Person%20OSINT%20Attack%20Surface.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "Resources",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Slavic Names Provenance",
-                            "url": "https://en.wikipedia.org/wiki/Slavic_name_suffixes",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Phone Numbers \ud83d\udcde",
-            "children": [
-                {
-                    "name": "\ud83d\udce6 Ignorant",
-                    "url": "https://github.com/megadose/ignorant",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d OSINT Industries",
-                    "url": "https://osint.industries",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udcd2 Phones Country Codes",
-                    "url": "https://en.wikipedia.org/wiki/List_of_country_calling_codes",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Search engines \ud83e\uddee",
-            "children": [
-                {
-                    "name": "Caches",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Cache and Archive search",
-                            "url": "https://cipher387.github.io/quickcacheandarchivesearch/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Dorking",
-                    "children": [
-                        {
-                            "name": "DuckDuckGo",
-                            "children": [
-                                {
-                                    "name": "\ud83d\udcd2 goDuck",
-                                    "url": "https://github.com/d34dfr4m3/goDuck",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Google",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d abhijithb200's Investigator",
-                                    "url": "https://abhijithb200.github.io/investigator/",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83d\udcd2 Cheatsheet",
-                                    "url": "https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83c\udf0d DorkSearch",
-                                    "url": "https://dorksearch.com",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83c\udf0d faisalahmed's Dorks",
-                                    "url": "https://dorks.faisalahmed.me/#",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83c\udf0d Google's Dorking form",
-                                    "url": "https://www.google.com/advanced_search",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Regular Expressions",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d regex101",
-                                    "url": "https://regex101.com",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Videos",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Youtube Subtitles search",
-                            "url": "https://filmot.com/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Social media \ud83d\udc65",
-            "children": [
-                {
-                    "name": "Apple",
-                    "children": [
-                        {
-                            "name": "\ud83d\udce6 Py-iMessage",
-                            "url": "https://github.com/Rolstenhouse/py-iMessage",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Discord",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/Discord/Discord%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Discord ID",
-                            "url": "https://discord.id",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Discord Snowflake",
-                            "url": "https://snowsta.mp",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "File hosting",
-                    "children": [
-                        {
-                            "name": "\ud83d\udce6 XeuLeDoc",
-                            "url": "https://github.com/Malfrats/xeuledoc",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "GitHub",
-                    "children": [
-                        {
-                            "name": "\ud83d\udce6 GitFive",
-                            "url": "https://github.com/mxrch/GitFive",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Github Code Search",
-                            "url": "https://cs.github.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Github Dorks",
-                            "url": "https://github.com/techgaun/github-dorks",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 ZEN",
-                            "url": "https://github.com/s0md3v/Zen",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Instagram",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/Instagram/Instagram%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 InstaTrack",
-                            "url": "https://github.com/Snbig/InstaTrack",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 OSINTGram",
-                            "url": "https://github.com/Datalux/Osintgram",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Sterra",
-                            "url": "https://github.com/novitae/sterraxcyl",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Tenai",
-                            "url": "https://github.com/novitae/Tenai",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Toutatis",
-                            "url": "https://github.com/megadose/toutatis",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 View Private Accounts",
-                            "url": "https://www.aware-online.com/en/osint-tutorials/view-private-instagram-accounts/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Linkedin",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/LinkedIn/LinkedIn%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Linkedin Google Dorks",
-                            "url": "https://github.com/krlabs/linkedin-dorks",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Nqntnqnqmb",
-                            "url": "https://github.com/megadose/nqntnqnqmb",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Revealin",
-                            "url": "https://github.com/mxrch/revealin",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Techniques",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/LinkedIn/LinkedIn%20OSINT%20Techniques%20Part%20I%20and%20II.pdf",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Other",
-                    "children": [
-                        {
-                            "name": "\ud83d\udd0d\ud83e\udd9c Alfred OSINT",
-                            "url": "https://github.com/Alfredredbird/alfred",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83d\udcd2\u2757\ufe0f Password Recovery",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/MISC/Account%20Knocking%20For%20Fun%20and%20OSINT.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "Pinterest",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/Pinterest/Pinterest%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Bypass Login Popup",
-                            "url": "https://mobile.twitter.com/ohshint_/status/1459737802296348673",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Pinterest Downloader",
-                            "url": "https://github.com/limkokhole/pinterest-downloader",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Reddit",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Reddective",
-                            "url": "https://www.redective.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d RedditMetis",
-                            "url": "https://redditmetis.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Snooper",
-                            "url": "https://github.com/NicholasDollick/Snooper",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d\ud83e\ude99 SocialGrep",
-                            "url": "https://socialgrep.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Telegram",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Telegram Fundamentals",
-                            "url": "https://www.cqcore.uk/telegram-fundamentals/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Telegram Nearby Map",
-                            "url": "https://github.com/tejado/telegram-nearby-map",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6 Telescan",
-                            "url": "https://github.com/pielco11/telescan",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Twitch",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Infos on User",
-                            "url": "https://twitter.com/cyb_detective/status/1489731978081538051",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d JustLog",
-                            "url": "https://logs.ivr.fi",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Pogu.live",
-                            "url": "https://pogu.live",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d TwitchDatabase",
-                            "url": "https://www.twitchdatabase.com/following",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Twitter",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/Twitter/Twitter%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d\ud83e\ude99 SocialBearing",
-                            "url": "https://socialbearing.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "Specific Locations \ud83d\udccd",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d BirdHunt",
-                                    "url": "https://birdhunt.co",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83c\udf0d TwitterFall",
-                                    "url": "https://twitterfall.com",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "\ud83c\udf0d TweetBeaver",
-                            "url": "https://tweetbeaver.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Twitter's Dorking Form",
-                            "url": "https://twitter.com/search-advanced",
-                            "type": "url"
-                        },
-                        {
-                            "name": "Visualization \ud83d\udcca",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d Hoaxy",
-                                    "url": "https://hoaxy.osome.iu.edu",
-                                    "type": "url"
-                                },
-                                {
-                                    "name": "\ud83c\udf0d Twiangulate",
-                                    "url": "https://twiangulate.com/search/",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Youtube",
-                    "children": [
-                        {
-                            "name": "\ud83d\udcd2 Attack Surface",
-                            "url": "https://github.com/sinwindie/OSINT/blob/master/Youtube/Youtube%20OSINT%20Attack%20Surface.pdf",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Specific Regions \ud83c\udfde",
-            "children": [
-                {
-                    "name": "Africa \ud83c\udf1e",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Afrinic WhoIS",
-                            "url": "https://www.afrinic.net/whois",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "America \ud83c\udf0e",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d P\u00e1ginas Amarillas",
-                            "url": "https://www.paginasamarillas.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "USA \ud83c\uddfa\ud83c\uddf8",
-                            "children": [
-                                {
-                                    "name": "Emails",
-                                    "children": [
-                                        {
-                                            "name": "\ud83c\udf0d ThatsThem",
-                                            "url": "https://thatsthem.com/reverse-email-lookup",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                },
-                                {
-                                    "name": "Phones",
-                                    "children": [
-                                        {
-                                            "name": "\ud83c\udf0d FreeCarrierLookup",
-                                            "url": "https://freecarrierlookup.com",
-                                            "type": "url"
-                                        },
-                                        {
-                                            "name": "\ud83c\udf0d Phone Validator",
-                                            "url": "https://www.phonevalidator.com",
-                                            "type": "url"
-                                        },
-                                        {
-                                            "name": "\ud83c\udf0d Phonerator",
-                                            "url": "https://www.martinvigo.com/tools/phonerator/",
-                                            "type": "url"
-                                        },
-                                        {
-                                            "name": "\ud83c\udf0d ThatsThem",
-                                            "url": "https://thatsthem.com/reverse-phone-lookup",
-                                            "type": "url"
-                                        },
-                                        {
-                                            "name": "\ud83c\udf0d\ud83e\ude99 USPhoneBook",
-                                            "url": "https://www.usphonebook.com",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                },
-                                {
-                                    "name": "Transportation",
-                                    "children": [
-                                        {
-                                            "name": "Licence plates",
-                                            "children": [
-                                                {
-                                                    "name": "\ud83c\udf0d InfoTracer",
-                                                    "url": "https://infotracer.com",
-                                                    "type": "url"
-                                                }
-                                            ],
-                                            "type": "folder"
-                                        },
-                                        {
-                                            "name": "Trains",
-                                            "children": [
-                                                {
-                                                    "name": "\ud83c\udf0d Amtrack Track your Train",
-                                                    "url": "https://www.amtrak.com/track-your-train.html",
-                                                    "type": "url"
-                                                },
-                                                {
-                                                    "name": "\ud83c\udf0d Railroad Casualties Map",
-                                                    "url": "https://fragis.fra.dot.gov/Trespassers/",
-                                                    "type": "url"
-                                                },
-                                                {
-                                                    "name": "\ud83d\udcd2 Railroad Map Depot",
-                                                    "url": "https://stb.maps.arcgis.com/home/index.html",
-                                                    "type": "url"
-                                                },
-                                                {
-                                                    "name": "\ud83c\udf0d Railroad Safety Map",
-                                                    "url": "https://fragis.fra.dot.gov/GISFRASafety/",
-                                                    "type": "url"
-                                                }
-                                            ],
-                                            "type": "folder"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                }
-                            ],
-                            "type": "folder"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Antarctic \ud83c\udde6\ud83c\uddf6",
-                    "children": [],
-                    "type": "folder"
-                },
-                {
-                    "name": "Asia / Oceania \ud83c\udf0f",
-                    "children": [
-                        {
-                            "name": "Japan \ud83c\uddef\ud83c\uddf5",
-                            "children": [
-                                {
-                                    "name": "\ud83d\udcd2 OSINT Ressources for Japan",
-                                    "url": "https://github.com/Coordinate-Cat/OSINT-JAPAN#osint-japan",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "North Korea \ud83c\uddf0\ud83c\uddf5",
-                            "children": [
-                                {
-                                    "name": "Map",
-                                    "children": [
-                                        {
-                                            "name": "\ud83d\udce6 AccessDPRK Map",
-                                            "url": "https://mynorthkorea.blogspot.com/2021/01/accessdprk-2021-map-free-version.html",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "South Korea \ud83c\uddf0\ud83c\uddf7",
-                            "children": [
-                                {
-                                    "name": "Map",
-                                    "children": [
-                                        {
-                                            "name": "\ud83c\udf0d Kakao Map",
-                                            "url": "https://map.kakao.com",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                }
-                            ],
-                            "type": "folder"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Europe \ud83c\uddea\ud83c\uddfa",
-                    "children": [
-                        {
-                            "name": "France \ud83c\uddeb\ud83c\uddf7\ud83d\udc13\ud83e\udd56\ud83e\udd50\ud83c\udf77",
-                            "children": [
-                                {
-                                    "name": "Individuals",
-                                    "children": [
-                                        {
-                                            "name": "\ud83d\udce6 DaProfiler",
-                                            "url": "https://github.com/TheRealDalunacrobate/DaProfiler",
-                                            "type": "url"
-                                        },
-                                        {
-                                            "name": "\ud83c\udf0d PagesBlanches",
-                                            "url": "https://www.pagesjaunes.fr/pagesblanches",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Iceland \ud83c\uddee\ud83c\uddf8",
-                            "children": [
-                                {
-                                    "name": "Map",
-                                    "children": [
-                                        {
-                                            "name": "\ud83c\udf0d Iceland street view",
-                                            "url": "https://ja.is/kort/",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Poland \ud83c\uddf5\ud83c\uddf1",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d\ud83d\udcd2 Otwarte Zrodla",
-                                    "url": "https://otwartezrodla.pl/",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Russia \ud83c\uddf7\ud83c\uddfa",
-                            "children": [
-                                {
-                                    "name": "Companies",
-                                    "children": [
-                                        {
-                                            "name": "\ud83c\udf0d List-Org",
-                                            "url": "https://www.list-org.com",
-                                            "type": "url"
-                                        }
-                                    ],
-                                    "type": "folder"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Spain \ud83c\uddea\ud83c\uddf8",
-                            "children": [
-                                {
-                                    "name": "\ud83c\udf0d Cadastre",
-                                    "url": "https://www1.sedecatastro.gob.es/CYCBienInmueble/OVCBusqueda.aspx",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        },
-                        {
-                            "name": "Switzerland \ud83c\udde8\ud83c\udded",
-                            "children": [
-                                {
-                                    "name": "\ud83d\udce6 Swiss OSINT Toolkit",
-                                    "url": "https://docs.google.com/spreadsheets/u/0/d/1LHP3gfppDBBPENffw9R7FrhpRxhmP0UhaLiklbQN7tA/htmlview",
-                                    "type": "url"
-                                }
-                            ],
-                            "type": "folder"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83c\udf0d\ud83d\udcd2 Worldwide OSINT Tools Map",
-                    "url": "https://cipher387.github.io/osintmap/",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Transportation \ud83d\ude82",
-            "children": [
-                {
-                    "name": "License Plates \ud83e\udea7",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d PlatesMania",
-                            "url": "http://platesmania.com/?&lang=en",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Planes \u2708\ufe0f",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d\ud83e\ude99 FlightRadar24",
-                            "url": "https://www.flightradar24.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Ships \u26f5\ufe0f",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d\ud83e\ude99 MarineTraffic",
-                            "url": "https://www.marinetraffic.com/",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d\ud83e\ude99 VesselFinder",
-                            "url": "https://www.vesselfinder.com/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "Trains \ud83d\ude85",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Openrailway Map",
-                            "url": "https://www.openrailwaymap.org",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udcd2 Railway Cams",
-                            "url": "https://www.railserve.com/RailCams/",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "URLs \ud83d\udd17",
-            "children": [
-                {
-                    "name": "Archives",
-                    "children": [
-                        {
-                            "name": "\ud83c\udf0d Archive.today",
-                            "url": "https://archive.today",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Google Cache",
-                            "url": "https://cachedview.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Wayback Machine",
-                            "url": "https://archive.org/web",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d WebCite",
-                            "url": "https://www.webcitation.org",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83c\udf0d Wikiwix Archive",
-                            "url": "https://archive.wikiwix.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83d\udcd2 Shortlink verification",
-                    "url": "https://seintpl.github.io/osint/short-links-verification-cheatsheet",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d Unfurl",
-                    "url": "https://dfir.blog/unfurl",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d Where does this link goes",
-                    "url": "https://wheregoes.com",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Useful Software \ud83d\udd27",
-            "children": [
-                {
-                    "name": "\ud83d\udce6 CSI Linux",
-                    "url": "https://csilinux.com",
-                    "type": "url"
-                },
-                {
-                    "name": "Data visualisation",
-                    "children": [
-                        {
-                            "name": "\ud83d\udce6 diagrams.net",
-                            "url": "https://www.diagrams.net",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6\ud83e\ude99 LinkScope",
-                            "url": "https://www.accentusoft.com",
-                            "type": "url"
-                        },
-                        {
-                            "name": "\ud83d\udce6\ud83e\ude99 Maltego",
-                            "url": "https://www.maltego.com",
-                            "type": "url"
-                        }
-                    ],
-                    "type": "folder"
-                },
-                {
-                    "name": "\ud83d\udce6 OSINT-VM",
-                    "url": "https://www.tracelabs.org/initiatives/osint-vm",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        },
-        {
-            "name": "Usernames \ud83c\udff7",
-            "children": [
-                {
-                    "name": "\ud83d\udcd2 Attack Surface",
-                    "url": "https://github.com/sinwindie/OSINT/blob/master/Username/USERNAME%20OSINT%20Attack%20Surface.pdf",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 Maigret",
-                    "url": "https://github.com/soxoj/maigret",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 Marple",
-                    "url": "https://github.com/soxoj/marple",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83d\udce6 sherlock",
-                    "url": "https://github.com/sherlock-project/sherlock",
-                    "type": "url"
-                },
-                {
-                    "name": "\ud83c\udf0d WhatsMyName",
-                    "url": "https://whatsmyname.app",
-                    "type": "url"
-                }
-            ],
-            "type": "folder"
-        }
+        "On-premises": [],
+        "Centralized vs. decentralized": [],
+        "Containerization": [],
+        "Virtualization": [],
+        "IoT": [],
+        "Industrial control systems (ICS)/ supervisory control and data acquisition (SCADA)": [],
+        "Real-time operating system (RTOS)": [],
+        "Embedded systems": [],
+        "High availability": []
+      },
+      "Considerations": [
+        "Availability",
+        "Resilience",
+        "Cost",
+        "Responsiveness",
+        "Scalability",
+        "Ease of deployment",
+        "Risk transference",
+        "Ease of recovery",
+        "Patch availability",
+        "Inability to patch",
+        "Power",
+        "Compute"
+      ]
+    },
+    "3.2 Security principles": {
+      "Infrastructure considerations": {
+        "Device placement": [],
+        "Security zones": [],
+        "Attack surface": [],
+        "Connectivity": [],
+        "Failure modes": [
+          "Fail-open",
+          "Fail-closed"
+        ],
+        "Device attribute": [
+          "Active vs. passive",
+          "Inline vs. tap/monitor"
+        ],
+        "Network appliances": [
+          "Jump server",
+          "Proxy server",
+          "Intrusion prevention system (IPS)/intrusion detection system (IDS)",
+          "Load balancer",
+          "Sensors"
+        ],
+        "Port security": [
+          "802.1X",
+          "Extensible Authentication Protocol (EAP)"
+        ],
+        "Firewall types": [
+          "Web application firewall (WAF)",
+          "Unified threat management (UTM)",
+          "Next-generation firewall (NGFW)",
+          "Layer 4/Layer 7"
+        ]
+      },
+      "Secure communication/access": [
+        "Virtual private network (VPN)",
+        "Remote access",
+        "Tunneling",
+        "Software-defined wide area network (SD-WAN)",
+        "Secure access service edge (SASE)"
+      ],
+      "Tunneling": [
+        "Transport Layer Security (TLS)",
+        "Internet protocol security (IPSec)"
+      ],
+      "Selection of effective controls": []
+    },
+    "3.3 Strategies to protect data": {
+      "Data types": [
+        "Regulated",
+        "Trade secret",
+        "Intellectual property",
+        "Legal information",
+        "Financial information",
+        "Human- and non-human- readable"
+      ],
+      "Data classifications": [
+        "Sensitive",
+        "Confidential",
+        "Public",
+        "Restricted",
+        "Private",
+        "Critical"
+      ],
+      "General data considerations": {
+        "Data states": [
+          "Data at rest",
+          "Data in transit",
+          "Data in use"
+        ],
+        "Data sovereignty": [],
+        "Geolocation": []
+      },
+      "Methods to secure data": [
+        "Geographic restrictions",
+        "Encryption",
+        "Hashing",
+        "Masking",
+        "Tokenization",
+        "Obfuscation",
+        "Segmentation",
+        "Permission restrictions"
+      ]
+    },
+    "3.4 Resilience and Recovery": {
+      "High availability": [
+        "Load balancing vs. clustering"
+      ],
+      "Site considerations": [
+        "Hot",
+        "Cold",
+        "Warm",
+        "Geographic dispersion"
+      ],
+      "Platform diversity": [],
+      "Multi-cloud systems": [],
+      "Continuity of operations": [],
+      "Capacity planning": [
+        "People",
+        "Technology",
+        "Infrastructure"
+      ],
+      "Testing": [
+        "Tabletop exercises",
+        "Fail over",
+        "Simulation",
+        "Parallel processing"
+      ],
+      "Backups": [
+        "Onsite/offsite",
+        "Frequency",
+        "Encryption",
+        "Snapshots",
+        "Recovery",
+        "Replication",
+        "Journaling"
+      ],
+      "Power": [
+        "Generators",
+        "Uninterruptible power supply (UPS)"
+      ]
+    }
+  },
+  "4.0 Security Operations": {
+    "4.1 security techniques to computing resources": {
+      "Secure baselines": [
+        "Establish",
+        "Deploy",
+        "Maintain"
+      ],
+      "Hardening targets": [
+        "Mobile devices",
+        "Workstations",
+        "Switches",
+        "Routers",
+        "Cloud infrastructure",
+        "Servers",
+        "ICS/SCADA",
+        "Embedded systems",
+        "RTOS",
+        "IoT devices"
+      ],
+      "Wireless devices": {
+        "Installation considerations": [
+          "Site surveys",
+          "Heat maps"
+        ]
+      },
+      "Mobile solutions": {
+        "Mobile device management (MDM)": [],
+        "Deployment models": [
+          "Bring your own device (BYOD)",
+          "Corporate-owned, personally enabled (COPE)",
+          "Choose your own device (CYOD)"
+        ],
+        "Connection methods": [
+          "Cellular",
+          "Wi-Fi",
+          "Bluetooth"
+        ]
+      },
+      "Wireless security settings": [
+        "Wi-Fi Protected Access 3 (WPA3)",
+        "AAA/Remote Authentication Dial-In User Service (RADIUS)",
+        "Cryptographic protocols",
+        "Authentication protocols"
+      ],
+      "Application security": [
+        "Input validation",
+        "Secure cookies",
+        "Static code analysis",
+        "Code signing"
+      ],
+      "Sandboxing": [],
+      "Monitoring": []
+    },
+    "4.2 Asset management": {
+      "Acquisition/procurement process": [],
+      "Assignment/accounting": [
+        "Ownership",
+        "Classification"
+      ],
+      "Monitoring/asset tracking": [
+        "Inventory",
+        "Enumeration"
+      ],
+      "Disposal/decommissioning": [
+        "Sanitization",
+        "Destruction",
+        "Certification",
+        "Data retention"
+      ]
+    },
+    "4.3 Vulnerability management": {
+      "Identification methods": [
+        "Vulnerability scan",
+        "Application security",
+        "Threat feed",
+        "Penetration testing",
+        "Responsible disclosure program",
+        "System/process audit"
+      ],
+      "Application security": [
+        "Static analysis",
+        "Dynamic analysis",
+        "Package monitoring"
+      ],
+      "Threat feed": [
+        "Open-source intelligence (OSINT)",
+        "Proprietary/third-party",
+        "Information-sharing organization",
+        "Dark web"
+      ],
+      "Responsible disclosure program": [
+        "Bug bounty program"
+      ],
+      "Analysis": [
+        "Confirmation",
+        "Prioritize",
+        "Common Vulnerability Scoring System (CVSS)",
+        "Common Vulnerability Enumeration (CVE)",
+        "Vulnerability classification",
+        "Exposure factor",
+        "Environmental variables",
+        "Industry/organizational impact",
+        "Risk tolerance"
+      ],
+      "Confirmation": [
+        "False positive",
+        "False negative"
+      ],
+      "Vulnerability response and remediation": [
+        "Patching",
+        "Insurance",
+        "Segmentation",
+        "Compensating controls",
+        "Exceptions and exemptions"
+      ],
+      "Validation of remediation": [
+        "Rescanning",
+        "Audit",
+        "Verification"
+      ],
+      "Reporting": []
+    },
+    "4.4 Alerting and monitoring concepts and tools": {
+      "Monitoring computing resources": [
+        "Systems",
+        "Applications",
+        "Infrastructure"
+      ],
+      "Activities": [
+        "Log aggregation",
+        "Alerting",
+        "Scanning",
+        "Reporting",
+        "Archiving",
+        "Alert response and remediation/ validation"
+      ],
+      "Alert response and remediation/ validation": [
+        "Quarantine",
+        "Alert tuning"
+      ],
+      "Tools": [
+        "Security Content Automation Protocol (SCAP)",
+        "Benchmarks",
+        "Agents/agentless",
+        "Security information and event management (SIEM)",
+        "Antivirus",
+        "Data loss prevention (DLP)",
+        "Simple Network Management Protocol (SNMP) traps",
+        "NetFlow",
+        "Vulnerability scanners"
+      ]
+    },
+    "4.5 Enterprise Security Enhancement": {
+      "Firewall": [
+        "Rules",
+        "Access lists",
+        "Ports/protocols",
+        "Screened subnets"
+      ],
+      "IDS/IPS": [
+        "Trends",
+        "Signatures"
+      ],
+      "Web filter": [
+        "Agent-based",
+        "Centralized proxy",
+        "Universal Resource Locator (URL) scanning",
+        "Content categorization",
+        "Block rules",
+        "Reputation"
+      ],
+      "Operating system security": [
+        "Group Policy",
+        "SELinux"
+      ],
+      "Implementation of secure protocols": [
+        "Protocol selection",
+        "Port selection",
+        "Transport method"
+      ],
+      "DNS filtering": [],
+      "Email security": [
+        "Domain-based Message Authentication Reporting and Conformance (DMARC)",
+        "DomainKeys Identified Mail (DKIM)",
+        "Sender Policy Framework (SPF)",
+        "Gateway"
+      ],
+      "File integrity monitoring": [],
+      "DLP": [],
+      "Network access control (NAC)": [],
+      "Endpoint detection and response (EDR)/extended detection and response (XDR)": [],
+      "User behavior analytics": []
+    },
+    "4.6 Identity and Access Management": {
+      "Provisioning/de-provisioning user accounts": [],
+      "Permission assignments and implications": [],
+      "Identity proofing": [],
+      "Federation": [],
+      "Single sign-on (SSO)": [
+        "Lightweight Directory Access Protocol (LDAP)",
+        "Open authorization (OAuth)",
+        "Security Assertions Markup Language (SAML)"
+      ],
+      "Interoperability": [],
+      "Attestation": [],
+      "Access controls": [
+        "Mandatory",
+        "Discretionary",
+        "Role-based",
+        "Rule-based",
+        "Attribute-based",
+        "Time-of-day restrictions",
+        "Least privilege"
+      ],
+      "Multifactor authentication": {
+        "Implementations": [
+          "Biometrics",
+          "Hard/soft authentication tokens",
+          "Security keys"
+        ],
+        "Factors": [
+          "Something you know",
+          "Something you have",
+          "Something you are",
+          "Somewhere you are"
+        ]
+      },
+      "Password concepts": {
+        "Password best practices": [
+          "Length",
+          "Complexity",
+          "Reuse",
+          "Expiration",
+          "Age"
+        ],
+        "Password managers": [],
+        "Passwordless": []
+      },
+      "Privileged access management tools": [
+        "Just-in-time permissions",
+        "Password vaulting",
+        "Ephemeral credentials"
+      ]
+    },
+    "4.7 Automation and Orchestration": {
+      "Use cases of automation and scripting": [
+        "User provisioning",
+        "Resource provisioning",
+        "Guard rails",
+        "Security groups",
+        "Ticket creation",
+        "Escalation",
+        "Enabling/disabling services and access",
+        "Continuous integration and testing",
+        "Integrations and Application programming interfaces (APIs)"
+      ],
+      "Benefits": [
+        "Efficiency/time saving",
+        "Enforcing baselines",
+        "Standard infrastructure configurations",
+        "Scaling in a secure manner",
+        "Employee retention",
+        "Reaction time",
+        "Workforce multiplier"
+      ],
+      "Other considerations": [
+        "Complexity",
+        "Cost",
+        "Single point of failure",
+        "Technical debt"
+      ]
+    },
+    "4.8 Incident response activities": {
+      "Process": [
+        "Preparation",
+        "Detection",
+        "Analysis",
+        "Containment",
+        "Eradication",
+        "Recovery",
+        "Lessons learned"
+      ],
+      "Training": [],
+      "Testing": [
+        "Tabletop exercise",
+        "Simulation"
+      ],
+      "Root cause analysis": [],
+      "Threat hunting": [],
+      "Digital forensics": [
+        "Legal hold",
+        "Chain of custody",
+        "Acquisition",
+        "Reporting",
+        "Preservation",
+        "E-discovery"
+      ]
+    },
+    "4.9 Data sources to support an investigation": {
+      "Log data": [
+        "Firewall logs",
+        "Application logs",
+        "Endpoint logs",
+        "OS-specific security logs",
+        "IPS/IDS logs",
+        "Network logs",
+        "Metadata"
+      ],
+      "Data sources": [
+        "Vulnerability scans",
+        "Automated reports",
+        "Dashboards",
+        "Packet captures"
+      ]
+    }
+  },
+  "5.0 Security Program Management and Oversight": {
+    "Guidelines": [],
+    "Policies": [
+      "Acceptable use policy (AUP)",
+      "Information security policies",
+      "Business continuity",
+      "Disaster recovery",
+      "Incident response",
+      "Software development lifecycle (SDLC)",
+      "Change management"
     ],
-    "type": "folder"
+    "Standards": [
+      "Password",
+      "Access control",
+      "Physical security",
+      "Encryption"
+    ],
+    "Procedures": [
+      "Change management",
+      "Onboarding/offboarding",
+      "Playbooks"
+    ],
+    "External considerations": [
+      "Regulatory",
+      "Legal",
+      "Industry",
+      "Local/regional",
+      "National",
+      "Global"
+    ],
+    "Monitoring and revision": [],
+    "Types of governance structures": [
+      "Boards",
+      "Committees",
+      "Government entities",
+      "Centralized/decentralized"
+    ],
+    "Roles and responsibilities for systems and data": [
+      "Owners",
+      "Controllers",
+      "Prcessors",
+      "Custodians/stewards"
+    ],
+    "5.2 Elements of the risk management process": {
+      "Risk identification": [],
+      "Risk assessment": [
+        "Ad hoc",
+        "Recurring",
+        "One-time",
+        "Continuous"
+      ],
+      "Risk analysis": [
+        "Qualitative",
+        "Quantitative",
+        "Single loss expectancy (SLE)",
+        "Annualized loss expectancy (ALE)",
+        "Annualized rate of occurrence (ARO)",
+        "Probability",
+        "Likelihood",
+        "Exposure factor",
+        "Impact"
+      ],
+      "Risk register": [
+        "Key risk indicators",
+        "Risk owners",
+        "Risk threshold"
+      ],
+      "Risk tolerance": [],
+      "Risk appetite": [
+        "Expansionary",
+        "Conservative",
+        "Neutral"
+      ],
+      "Risk management strategies": [
+        "Transfer",
+        "Accept",
+        "Avoid",
+        "Mitigate"
+      ],
+      "Accept": [
+        "Exemption",
+        "Exception"
+      ],
+      "Risk reporting": [],
+      "Business impact analysis": [
+        "Recovery time objective (RTO)",
+        "Recovery point objective (RPO)",
+        "Mean time to repair (MTTR)",
+        "Mean time between failures (MTBF)"
+      ]
+    },
+    "5.3 Third-party risk assessment and management": {
+      "Vendor assessment": [
+        "Penetration testing",
+        "Right-to-audit clause",
+        "Evidence of internal audits",
+        "Independent assessments",
+        "Supply chain analysis"
+      ],
+      "Vendor selection": [
+        "Due diligence",
+        "Conflict of interest"
+      ],
+      "Agreement types": [
+        "Service-level agreement (SLA)",
+        "Memorandum of agreement (MOA)",
+        "Memorandum of understanding (MOU)",
+        "Master service agreement (MSA)",
+        "Work order (WO)/statement of work (SOW)",
+        "Non-disclosure agreement (NDA)",
+        "Business partners agreement (BPA)"
+      ],
+      "Vendor monitoring": [],
+      "Questionnaires": [],
+      "Rules of engagement": []
+    },
+    "5.4 Security compliance": {
+      "Compliance reporting": [
+        "Internal",
+        "External"
+      ],
+      "Consequences of non-compliance": [
+        "Fines",
+        "Sanctions",
+        "Reputational damage",
+        "Loss of license",
+        "Contractual impacts"
+      ],
+      "Compliance monitoring": [
+        "Due diligence/care",
+        "Attestation and acknowledgement",
+        "Internal and external",
+        "Automation"
+      ],
+      "Privacy": {
+        "Legal implications": [
+          "Local/regional",
+          "National",
+          "Global"
+        ],
+        "Data subject": [],
+        "Controller vs. processor": [],
+        "Ownership": [],
+        "Data inventory and retention": [],
+        "Right to be forgotten": []
+      }
+    },
+    "5.5 audits and Assessments": {
+      "Attestation": [],
+      "Internal": [
+        "Compliance",
+        "Audit committee",
+        "Self-assessments"
+      ],
+      "External": [
+        "Regulatory",
+        "Examinations",
+        "Assessment",
+        "Independent third- party audit"
+      ],
+      "Penetration testing": [
+        "Physical",
+        "Offensive",
+        "Defensive",
+        "Integrated",
+        "Known environment",
+        "Partially known environment",
+        "Unknown environment",
+        "Reconnaissance"
+      ],
+      "Reconnaissance": [
+        "Passive",
+        "Active"
+      ]
+    }
+  }
 }
